@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MultiPlug.Ext.4IR.SOS</id>
+    <version>1.0.0</version>
+    <title>4IR SOS Extension for the MultiPlug .Net Edge Computing Platform</title>
+    <authors>4IR.UK</authors>
+    <owners>4IR.UK</owners>
+    <projectUrl>https://github.com/Industry4/MultiPlug.Ext.4IR.SOS</projectUrl>
+    <icon>images\multiplugico.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Use Network Sockets with this MultiPlug Extension</description>
+	<license type="expression">MIT</license>
+	<repository type="git" url="https://github.com/Industry4/MultiPlug.Ext.4IR.SOS" />
+	<releaseNotes>1.0.0 First Release</releaseNotes>
+    <copyright>4IR.UK British Systems 2023</copyright>
+    <tags>MultiPlug</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="MultiPlug.Base" version="1.0.71" />
+        <dependency id="MultiPlug.Extension.Core" version="1.0.64" />
+        <dependency id="MultiPlug.Core" version="2.2.81" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="images\multiplugico.png" target="images\" />
+    <file src="..\..\src\MultiPlug.Ext.4IR.SOS\bin\Release\MultiPlug.Ext.4IR.SOS.dll" target="lib\net472" />
+  </files>
+</package>
