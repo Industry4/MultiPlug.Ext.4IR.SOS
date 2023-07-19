@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.4IR.SOS</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>4IR SOS Extension for the MultiPlug .Net Edge Computing Platform</title>
     <authors>4IR.UK</authors>
     <owners>4IR.UK</owners>
