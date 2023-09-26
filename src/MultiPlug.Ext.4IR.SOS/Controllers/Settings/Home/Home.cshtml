@@ -1,6 +1,6 @@
 ﻿@model MultiPlug.Base.Http.EdgeApp
 
-<form action="" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" autocomplete="off">
+<form action="@Raw(Model.Context.Paths.APIs)new/" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" autocomplete="off">
     <section class="row-fluid">
 
         <div class="row-fluid">
@@ -11,20 +11,63 @@
                     <p style="font-size:26px; line-height: 54px; text-align: center; margin: 0px;">SOS</p>
                 </div>
                 <div class="span4" style="text-align: right;">
-                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn btn-green"><i class="icon-save icon-large"></i><p>Save</p></button>
+                    <button type="submit" value="submit" style="height:54px; width:65px" class="item btn btn-green"><i class="icon-plus icon-large"></i><p>New</p></button>
                 </div>
             </div>
         </div>
 
         <div class="row-fluid">
-            <h3 class="box-header"><b>4IR.UK Product Support</b></h3>
+            <h3 class="box-header"><b>Logs</b></h3>
             <div class="box non-collapsible">
-                <h4>SMEMA Hermes Adaptor</h4>
+                <h4>Snapshots</h4>
                 <div class="row-fluid well">
-                    <div class="span3">
-                        <div class="row-fluid"><div class="span12"><h5>Action</h5></div></div>
-                        <div class="row-fluid"><div class="span12"><a class="btn" href="@Raw(Model.Context.Paths.APIs)download/SOS-@Raw(DateTime.Now.ToString("MM-dd-yyyy-HH-mm"))@Raw(".zip")" download>Download SOS Zip</a></div></div>
+                    <div class="span12">
+@for (int i = 0; i < @Model.Extension.Model.Files.Length; i++)
+{
+                        <div class="row-fluid snapshot-row">
+                            <div class="span10"><a href="@Raw(Model.Context.Paths.APIs)download/@Raw(Model.Extension.Model.Files[i])" download>@Raw(Model.Extension.Model.Files[i])</a></div>
+                            <div class="span2"><a class="btn btn-red btn-deletelog" href="@Raw(Model.Context.Paths.APIs)delete/@Raw(Model.Extension.Model.Files[i])"><i class="icon-trash"></i></a></div>
+                        </div>
+}
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <h3 class="box-header"><b>Automatic Log Snapshot Service</b></h3>
+            <div class="box non-collapsible">
+                <h4>Status</h4>
+                <div class="row-fluid well">
+                    @if(Model.Extension.Model.RebootUserPrompt)
+                    {
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="span12"><b>Please restart MultiPlug for changes to be applied.</b></div>
+                            </div>
+                        </div>
+                    }
+                    @if (!Model.Extension.Model.ServiceInstalled)
+                    {
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="span12"><a class="btn btn-blue btn-install" href="@Raw(Model.Context.Paths.APIs)install/">Install</a></div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="span12">Installed Version: @Raw(Model.Extension.Model.ServiceInstalledVersion) Latest Version: 1.0.0</div>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="span12"><a class="btn btn-red btn-remove" href="@Raw(Model.Context.Paths.APIs)remove/">Remove</a></div>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -32,3 +75,46 @@
     </section>
 
 </form>
+
+<script>
+    $(".btn-deletelog").click(function (event) {
+        event.preventDefault();
+
+        var theRow = $(this).closest(".snapshot-row");
+
+        $.post($(this).attr('href'), function (data) {
+
+        })
+        .done(function () {
+            theRow.remove();
+        });
+    });
+
+    $(".btn-install").click(function (event) {
+        event.preventDefault();
+
+        $.post($(this).attr('href'), function (data) {
+        })
+        .done(function () {
+            location.reload();
+        })
+        .fail(function (xhr, status, error) {
+            alert("Error " + xhr.responseJSON.errorMessage);
+        });
+    });
+
+    $(".btn-remove").click(function (event) {
+        event.preventDefault();
+
+        $.post($(this).attr('href'), function (data) {
+
+        })
+        .done(function () {
+            location.reload();
+        })
+        .fail(function(xhr, status, error) {
+            alert("Error " + xhr.responseJSON.errorMessage);
+        });
+    });
+
+</script>

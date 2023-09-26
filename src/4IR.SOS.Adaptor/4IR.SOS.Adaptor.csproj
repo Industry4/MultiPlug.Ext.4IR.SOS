@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B535AFC6-5B60-4632-8E0D-4B3A6C96B65E}</ProjectGuid>
+    <ProjectGuid>{1E83AAA6-D7B9-4A04-9A86-979DF80BAEE8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MultiPlug.Ext._4IR.SOS</RootNamespace>
-    <AssemblyName>MultiPlug.Ext.4IR.SOS</AssemblyName>
+    <RootNamespace>_4IR.SOS.Adaptor</RootNamespace>
+    <AssemblyName>4IR.SOS.Adaptor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,14 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MultiPlug.Base, Version=1.0.71.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MultiPlug.Base.1.0.71\lib\net472\MultiPlug.Base.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MultiPlug.Extension.Core, Version=1.0.64.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MultiPlug.Extension.Core.1.0.64\lib\net472\MultiPlug.Extension.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression.FileSystem" />
@@ -50,42 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\API\APIEndpoint.cs" />
-    <Compile Include="Controllers\API\Delete\DeleteController.cs" />
-    <Compile Include="Controllers\API\Download\DownloadController.cs" />
-    <Compile Include="Controllers\API\Install\InstallController.cs" />
-    <Compile Include="Controllers\API\New\NewController.cs" />
-    <Compile Include="Controllers\API\Remove\RemoveController.cs" />
-    <Compile Include="Controllers\Settings\Home\HomeController.cs" />
-    <Compile Include="Controllers\Settings\SettingsApp.cs" />
-    <Compile Include="Models\Settings\Home\GetModel.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SOS.cs" />
+    <Compile Include="Retrieve.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\Hardware.cs" />
-    <Compile Include="Utils\Swan\Definitions.cs" />
-    <Compile Include="Utils\Swan\ProcessResult.cs" />
-    <Compile Include="Utils\Swan\ProcessRunner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Controllers\Settings\Home\Home.cshtml" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\4IR.SOS.Adaptor\4IR.SOS.Adaptor.csproj">
-      <Project>{1e83aaa6-d7b9-4a04-9a86-979df80baee8}</Project>
-      <Name>4IR.SOS.Adaptor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

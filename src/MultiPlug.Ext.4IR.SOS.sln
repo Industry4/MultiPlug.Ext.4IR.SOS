@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiPlug.Ext.4IR.SOS", "MultiPlug.Ext.4IR.SOS\MultiPlug.Ext.4IR.SOS.csproj", "{B535AFC6-5B60-4632-8E0D-4B3A6C96B65E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4IR.SOS.Adaptor", "4IR.SOS.Adaptor\4IR.SOS.Adaptor.csproj", "{1E83AAA6-D7B9-4A04-9A86-979DF80BAEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptorSOS", "AdaptorSOS\AdaptorSOS.csproj", "{92555BE6-D5D5-4253-B398-DF791E6C8DC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B535AFC6-5B60-4632-8E0D-4B3A6C96B65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B535AFC6-5B60-4632-8E0D-4B3A6C96B65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B535AFC6-5B60-4632-8E0D-4B3A6C96B65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E83AAA6-D7B9-4A04-9A86-979DF80BAEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E83AAA6-D7B9-4A04-9A86-979DF80BAEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E83AAA6-D7B9-4A04-9A86-979DF80BAEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E83AAA6-D7B9-4A04-9A86-979DF80BAEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92555BE6-D5D5-4253-B398-DF791E6C8DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92555BE6-D5D5-4253-B398-DF791E6C8DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92555BE6-D5D5-4253-B398-DF791E6C8DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92555BE6-D5D5-4253-B398-DF791E6C8DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

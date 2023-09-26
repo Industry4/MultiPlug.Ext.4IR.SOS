@@ -1,0 +1,15 @@
+#!/bin/bash
+
+chmod +x /usr/local/bin/adaptorsos/adaptorsos.sh
+
+if ( ! test -f /lib/systemd/system/multiplugwithoutsos.service )
+then
+mv /lib/systemd/system/multiplug.service /lib/systemd/system/multiplugwithoutsos.service
+cp /lib/systemd/system/multiplugwithsos.service /lib/systemd/system/multiplug.service 
+else
+rm /lib/systemd/system/multiplug.service
+cp /lib/systemd/system/multiplugwithsos.service /lib/systemd/system/multiplug.service 
+fi
+
+systemctl daemon-reload
+systemctl enable multiplug.service

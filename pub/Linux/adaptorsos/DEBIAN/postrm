@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if ( test -f /lib/systemd/system/multiplug.service )
+then
+rm /lib/systemd/system/multiplug.service
+mv /lib/systemd/system/multiplugwithoutsos.service /lib/systemd/system/multiplug.service
+fi
+
+systemctl daemon-reload
+systemctl enable multiplug.service

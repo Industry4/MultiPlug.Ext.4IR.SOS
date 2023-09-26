@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ( systemctl is-active --quiet multiplug.service )
+then
+systemctl disable multiplug.service
+fi

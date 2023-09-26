@@ -1,0 +1,6 @@
+[Unit]
+Description=Adaptor SOS
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/adaptorsos/adaptorsos.sh

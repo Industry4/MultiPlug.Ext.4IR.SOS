@@ -1,0 +1,11 @@
+Package: adaptorsos
+Version: 1.0.0
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 15
+Maintainer: 4IR.UK
+Homepage: https://github.com/Industry4/MultiPlug.Ext.4IR.SOS
+Description: SMEMA Adaptor SOS
+Recommends: mono-complete (>=4.6.2)
