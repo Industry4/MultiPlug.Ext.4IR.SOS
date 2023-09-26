@@ -6,6 +6,4 @@ Collects the Trace Logs for all 4IR.UK products (SMEMA Hermes/SMEMA Ethernet Ada
 * To Remove the Service click Remove, then restart MultiPlug.
 
 ## User Interface
-![image](https://github.com/Industry4/MultiPlug.Ext.4IR.SOS/assets/14904422/5da35971-306b-4f43-acab-73e52d5fba17)
-
-
+![image](https://github.com/Industry4/MultiPlug.Ext.4IR.SOS/assets/14904422/3d5351d9-ef06-4f0f-aaf2-415349208a68)
