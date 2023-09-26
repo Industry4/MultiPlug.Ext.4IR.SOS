@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/Industry4/MultiPlug.Ext.4IR.SOS</projectUrl>
     <icon>images\multiplugico.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Use Network Sockets with this MultiPlug Extension</description>
+    <description>Zips up Log files from 4IR.UK Products</description>
     <license type="expression">MIT</license>
     <repository type="git" url="https://github.com/Industry4/MultiPlug.Ext.4IR.SOS" />
     <readme>docs\README.md</readme>
