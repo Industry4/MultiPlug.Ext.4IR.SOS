@@ -63,7 +63,10 @@ namespace _4IR.SOS.Adaptor
 
                         if (file.EndsWith("json"))
                         {
-                            continue;
+                            if( ! file.StartsWith("mono") )
+                            {
+                                continue;
+                            }
                         }
 
                         if (file.EndsWith("config"))
