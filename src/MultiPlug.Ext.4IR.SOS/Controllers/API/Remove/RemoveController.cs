@@ -1,8 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
-using MultiPlug.Base.Attribute;
+﻿using MultiPlug.Base.Attribute;
 using MultiPlug.Base.Http;
-using MultiPlug.Ext._4IR.SOS.Utils.Swan;
 
 namespace MultiPlug.Ext._4IR.SOS.Controllers.API.Remove
 {
@@ -11,27 +8,9 @@ namespace MultiPlug.Ext._4IR.SOS.Controllers.API.Remove
     {
         public Response Post()
         {
-            string Result = null;
+            string Result = SOS.RemoveService();
 
-            try
-            {
-                if (Utils.Hardware.Instance.isRunningRaspberryPi)
-                {
-                    var Task = ProcessRunner.GetProcessResultAsync("apt-get", "-qq remove adaptorsos");
-                    Task.Wait();
-
-                    if( ! Task.Result.Okay() )
-                    {
-                        Result = Task.Result.StandardError;
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                Result = ex.Message;
-            }
-
-            if( Result == null)
+            if ( Result == null)
             {
                 Utils.Hardware.Instance.RebootUserPrompt = true;
 

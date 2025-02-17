@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x /usr/local/bin/adaptorsos/adaptorsos.sh
+chmod +x /usr/local/bin/multiplug/extensions/MultiPlug.Ext.4IR.SOS/adaptorsos.sh
 
 if ( ! test -f /lib/systemd/system/multiplugwithoutsos.service )
 then

@@ -3,4 +3,4 @@ Description=Adaptor SOS
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/adaptorsos/adaptorsos.sh
+ExecStart=/usr/local/bin/multiplug/extensions/MultiPlug.Ext.4IR.SOS/adaptorsos.sh

@@ -58,6 +58,7 @@
     <Compile Include="Controllers\API\Remove\RemoveController.cs" />
     <Compile Include="Controllers\Settings\Home\HomeController.cs" />
     <Compile Include="Controllers\Settings\SettingsApp.cs" />
+    <Compile Include="Models\FileProp.cs" />
     <Compile Include="Models\Settings\Home\GetModel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
