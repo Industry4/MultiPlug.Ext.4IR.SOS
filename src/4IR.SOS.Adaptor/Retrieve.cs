@@ -30,6 +30,7 @@ namespace _4IR.SOS.Adaptor
             CopyFilesFromExtensions(folderpath, "MultiPlug.Ext.RasPi.GPIO", "/usr/local/bin/multiplug/extensions/MultiPlug.Ext.RasPi.GPIO/diag/");
             CopyFilesFromExtensions(folderpath, "MultiPlug.Ext.Nuget", "/usr/local/bin/multiplug/extensions/MultiPlug.Ext.Nuget/diag/");
             CopyFilesFromExtensions(folderpath, "MultiPlug", "/usr/local/bin/multiplug/diag/");
+            CopySingleFileFromExtensions(folderpath, "MultiPlug.Ext.Recipe.File", "/usr/local/bin/multiplug/extensions/MultiPlug.Ext.Recipe.File/base.json");
 
             string MultiPlugHomeDirectory = "/usr/local/bin/multiplug/";
 
@@ -42,45 +43,47 @@ namespace _4IR.SOS.Adaptor
                     Directory.CreateDirectory(CollectionMono);
                 }
 
-                foreach (var file in Directory.GetFiles(MultiPlugHomeDirectory))
+                foreach (var path in Directory.GetFiles(MultiPlugHomeDirectory))
                 {
+                    var FileName = Path.GetFileName(path);
+
                     try
                     {
-                        if (file.EndsWith("exe"))
+                        if (FileName.EndsWith("exe"))
                         {
                             continue;
                         }
 
-                        if (file.EndsWith("dll"))
+                        if (FileName.EndsWith("dll"))
                         {
                             continue;
                         }
 
-                        if (file.EndsWith("lock"))
+                        if (FileName.EndsWith("lock"))
                         {
                             continue;
                         }
 
-                        if (file.EndsWith("json"))
+                        if (FileName.EndsWith("json"))
                         {
-                            if( ! file.StartsWith("mono") )
+                            if ( ! FileName.StartsWith("mono") )
                             {
                                 continue;
                             }
                         }
 
-                        if (file.EndsWith("config"))
+                        if (FileName.EndsWith("config"))
                         {
                             continue;
                         }
 
-                        File.Copy(file, Path.Combine(CollectionMono, Path.GetFileName(file)), true);
+                        File.Copy(path, Path.Combine(CollectionMono, Path.GetFileName(path)), true);
                     }
                     catch
                     {
                         using (StreamWriter outputFile = new StreamWriter(Path.Combine(folderpath, "Errors.txt"), true))
                         {
-                            outputFile.WriteLine(file);
+                            outputFile.WriteLine(path);
                         }
                     }
                 }
@@ -97,25 +100,50 @@ namespace _4IR.SOS.Adaptor
         {
             if (Directory.Exists(thePathToTheExtensionFolder))
             {
-                string CollectionHermes = Path.Combine(theCollectionFolderPath, theExtensionName);
+                string ExtensionFolder = Path.Combine(theCollectionFolderPath, theExtensionName);
 
-                if (!Directory.Exists(CollectionHermes))
+                if (!Directory.Exists(ExtensionFolder))
                 {
-                    Directory.CreateDirectory(CollectionHermes);
+                    Directory.CreateDirectory(ExtensionFolder);
                 }
 
                 foreach (var file in Directory.GetFiles(thePathToTheExtensionFolder))
                 {
                     try
                     {
-                        File.Copy(file, Path.Combine(CollectionHermes, Path.GetFileName(file)), true);
+                        File.Copy(file, Path.Combine(ExtensionFolder, Path.GetFileName(file)), true);
                     }
                     catch
                     {
-                        using (StreamWriter outputFile = new StreamWriter(Path.Combine(CollectionHermes, "Errors.txt"), true))
+                        using (StreamWriter outputFile = new StreamWriter(Path.Combine(ExtensionFolder, "Errors.txt"), true))
                         {
                             outputFile.WriteLine(file);
                         }
+                    }
+                }
+            }
+        }
+
+        private static void CopySingleFileFromExtensions(string theCollectionFolderPath, string theExtensionName, string theFileNameAndPath)
+        {
+            if (File.Exists(theFileNameAndPath))
+            {
+                string ExtensionFolder = Path.Combine(theCollectionFolderPath, theExtensionName);
+
+                if (!Directory.Exists(ExtensionFolder))
+                {
+                    Directory.CreateDirectory(ExtensionFolder);
+                }
+
+                try
+                {
+                    File.Copy(theFileNameAndPath, Path.Combine(ExtensionFolder, Path.GetFileName(theFileNameAndPath)), true);
+                }
+                catch
+                {
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(ExtensionFolder, "Errors.txt"), true))
+                    {
+                        outputFile.WriteLine(theFileNameAndPath);
                     }
                 }
             }
