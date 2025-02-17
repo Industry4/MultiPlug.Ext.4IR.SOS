@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MultiPlug.Ext.4IR.SOS</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>4IR SOS Extension for the MultiPlug .Net Edge Computing Platform</title>
     <authors>4IR.UK</authors>
     <owners>4IR.UK</owners>
@@ -14,9 +14,11 @@
     <repository type="git" url="https://github.com/Industry4/MultiPlug.Ext.4IR.SOS" />
     <readme>docs\README.md</readme>
     <releaseNotes>
+	1.0.3 https://github.com/Industry4/MultiPlug.Ext.4IR.SOS/issues/3
+https://github.com/Industry4/MultiPlug.Ext.4IR.SOS/issues/2
     1.0.2 https://github.com/Industry4/MultiPlug.Ext.4IR.SOS/issues/1
     1.0.0 First Release</releaseNotes>
-    <copyright>4IR.UK British Systems 2023</copyright>
+    <copyright>4IR.UK British Systems 2025</copyright>
     <tags>MultiPlug</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.7.2">
@@ -30,7 +32,8 @@
     <file src="images\multiplugico.png" target="images\" />
     <file src="..\..\src\MultiPlug.Ext.4IR.SOS\bin\Release\MultiPlug.Ext.4IR.SOS.dll" target="lib\net472" />
     <file src="..\..\src\MultiPlug.Ext.4IR.SOS\bin\Release\4IR.SOS.Adaptor.dll" target="lib\net472" />
-    <file src="..\Linux\adaptorsos_1.0.0_all.deb" target="lib\net472" />
+    <file src="..\..\src\AdaptorSOS\bin\Release\AdaptorSOS.exe" target="lib\net472" />
+    <file src="..\Linux\adaptorsos_1.0.1_all.deb" target="lib\net472" />
     <file src="..\..\README.md" target="docs\" />
   </files>
 </package>

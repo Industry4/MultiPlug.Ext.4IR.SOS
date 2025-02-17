@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("4IR.UK British Systems")]
 [assembly: AssemblyProduct("4IR.UK SOS")]
-[assembly: AssemblyCopyright("Copyright 4IR.UK © 2023")]
+[assembly: AssemblyCopyright("Copyright 4IR.UK © 2025")]
 [assembly: AssemblyTrademark("MultiPlug")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]
